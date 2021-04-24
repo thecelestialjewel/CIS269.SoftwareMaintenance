@@ -1,64 +1,34 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace _42dayrange
 {
-    //Christine Jordan 4.18.2021 CIS269
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
         }
-      
+
 
         /* 1. Create a function which looks at the checkboxes
          * on the form and returns a sequence (array/list/etc) of the days
          * selected.  The return must be a sequence of enumeration
          * values.  The return sequence must be in day-sorted order,
-         * e.g. Sunday, Monday, ..., Friday, Saturday
+         * e.g. Monday, ..., Friday, Saturday, Sunday
          * 
          */
-        private IEnumerable<Day> GetCheckboxDays() 
+        public IEnumerable<Day> GetCheckboxDays() 
         {
-
-            // YOU FILL IN HERE
-            // Create an array/list/etc of enum values
-            // based on the checkboxes on the form.
-
-            List<Day> days = new List<Day>(); //created a list of days
-            if (chkSunday.Checked)
-            {
-                days.Add(Day.Sunday);
-            }
-            if (chkMonday.Checked)
-            {
-                days.Add(Day.Monday);
-            }
-            if (chkTuesday.Checked)
-            {
-                days.Add(Day.Tuesday);
-            }
-            if (chkWednesday.Checked)
-            {
-                days.Add(Day.Wednesday);
-            }
-            if (chkThursday.Checked) 
-            {
-                days.Add(Day.Thursday);
-            }
-            if (chkFriday.Checked)
-            {
-                days.Add(Day.Friday);
-            }
-            if (chkSaturday.Checked)
-            {
-                days.Add(Day.Saturday);
-            }
-            return days;
-           
+            // you implement here
+            List<Day> A = new List<Day>();
+            return A;
         }
 
         /* 2. and 3. 
@@ -75,12 +45,12 @@ namespace _42dayrange
          * 
          * The date range is a string which lists the
          * names of each selected day, separated by
-         * a comma.  If three or more consecutive days
+         * a comma and a space.  If three or more consecutive days
          * are selected, however, use a dash to specify the range
          * from the first to the last.
          * 
          */
-        private string ToDayRange(Day[] days) //cntrl + click 'Day' to see enum values -CMJ
+        public string ToDayRange(Day[] days)
         {
             // YOU FIX STARTING HERE
             
@@ -89,6 +59,9 @@ namespace _42dayrange
 
             // start at the first day
             int pos = 0;
+
+            
+            
 
             // look through all the days
             while (pos < days.Length)
@@ -111,7 +84,7 @@ namespace _42dayrange
                     // use a dash to separate the first and last
                     seq += "-" + days[pos + off - 1];
                     // skip over the intermediate days
-                    pos = pos + off; //FIXED CODE TO MOVE POSITION TO KEEP UP WITH OFFSET -CMJ
+                    pos++;
                 }
                 else pos++; // otherwise move one step
 
@@ -127,9 +100,12 @@ namespace _42dayrange
         }
 
         // no need to change this.
-        private void chkDay_CheckedChanged(object sender, EventArgs e)
+        public void chkDay_CheckedChanged(object sender, EventArgs e)
         {
             txtDays.Text = ToDayRange(GetCheckboxDays().ToArray());
         }
     }
 }
+
+
+
