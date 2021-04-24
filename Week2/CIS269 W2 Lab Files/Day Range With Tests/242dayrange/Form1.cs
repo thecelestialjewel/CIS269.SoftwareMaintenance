@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace _42dayrange
+//Christine Jordan 
+//4.23.2021
+//CIS 269: Week 2 Lab
 {
     public partial class Form1 : Form
     {
@@ -24,11 +23,45 @@ namespace _42dayrange
          * e.g. Monday, ..., Friday, Saturday, Sunday
          * 
          */
-        public IEnumerable<Day> GetCheckboxDays() 
+        public IEnumerable<Day> GetCheckboxDays()
         {
-            // you implement here
-            List<Day> A = new List<Day>();
-            return A;
+
+            // YOU FILL IN HERE
+            // Create an array/list/etc of enum values
+            // based on the checkboxes on the form.
+
+            List<Day> days = new List<Day>(); //created a list of days
+           
+            if (chkMonday.Checked)
+            {
+                days.Add(Day.Monday);
+            }
+            if (chkTuesday.Checked)
+            {
+                days.Add(Day.Tuesday);
+            }
+            if (chkWednesday.Checked)
+            {
+                days.Add(Day.Wednesday);
+            }
+            if (chkThursday.Checked)
+            {
+                days.Add(Day.Thursday);
+            }
+            if (chkFriday.Checked)
+            {
+                days.Add(Day.Friday);
+            }
+            if (chkSaturday.Checked)
+            {
+                days.Add(Day.Saturday);
+            } 
+            if (chkSunday.Checked)
+            {
+                days.Add(Day.Sunday);
+            }
+            return days;
+
         }
 
         /* 2. and 3. 
@@ -45,23 +78,20 @@ namespace _42dayrange
          * 
          * The date range is a string which lists the
          * names of each selected day, separated by
-         * a comma and a space.  If three or more consecutive days
+         * a comma.  If three or more consecutive days
          * are selected, however, use a dash to specify the range
          * from the first to the last.
          * 
          */
-        public string ToDayRange(Day[] days)
+        public string ToDayRange(Day[] days) //cntrl + click 'Day' to see enum values -CMJ
         {
             // YOU FIX STARTING HERE
-            
+
             // result string
             string r = "";
 
             // start at the first day
             int pos = 0;
-
-            
-            
 
             // look through all the days
             while (pos < days.Length)
@@ -84,7 +114,7 @@ namespace _42dayrange
                     // use a dash to separate the first and last
                     seq += "-" + days[pos + off - 1];
                     // skip over the intermediate days
-                    pos++;
+                    pos = pos + off; //FIXED CODE TO MOVE POSITION TO KEEP UP WITH OFFSET -CMJ
                 }
                 else pos++; // otherwise move one step
 
@@ -96,8 +126,11 @@ namespace _42dayrange
 
             // END FIXING HERE
 
-            
+
         }
+
+
+
 
         // no need to change this.
         public void chkDay_CheckedChanged(object sender, EventArgs e)
