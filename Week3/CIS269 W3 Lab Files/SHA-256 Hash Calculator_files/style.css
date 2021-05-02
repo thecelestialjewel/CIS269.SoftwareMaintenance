@@ -1,0 +1,763 @@
+/*
+Theme Name: XorBin
+Theme URI: http://www.xorbin.com/
+Description: WordPress theme made for xorbin.com website.
+Version: 1.0
+Author: Justas Vinevičius, Darius Reginis, Donatas Pranckėnas
+
+...
+*/
+
+/* --- clearfix --- */
+.clearfix:after {
+	content: ".";
+	display: block;
+	font-size: 0px;
+	line-height: 0px;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1px;
+}
+
+
+
+/* --- reset --- */
+object {
+	outline: none;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, form {
+	padding: 0px;
+	margin: 0px;
+}
+
+html, body {
+	height: 100%;
+}
+	
+	img {
+		border: 0px;
+	}
+	
+	textarea {
+		overflow: auto;
+	}
+
+	.fl {
+		float: left;
+	}
+
+	.fr {
+		float: right;
+	}
+
+
+/* --- default --- */
+body, td, th, input, textarea, select {
+	font-family: verdana, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+}
+
+body {
+	background: #ffffff url(images/bg2.gif) repeat-x left top;
+	text-align: center; /* IE5.5 centra vimas */
+}
+
+	a {
+		color: #00579c;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+	
+	a.download-skin {
+		background-color: #5e9f28;
+		font-weight: bold;
+		color: #fff;
+		padding: 0 2px;
+	}
+
+#container {
+	width: 970px;
+	margin: 0px auto;
+	text-align: left;
+	padding-bottom: 20px;
+}
+
+	#header {
+		position: relative;
+		height: 180px;
+	}
+	
+		#logo {
+			position: absolute;
+			right: 10px;
+			top: 60px;
+			padding: 0px;
+			margin: 0px;
+		}
+		
+			#logo a {
+				display: block;
+				width: 200px;
+				height: 65px;
+				background: transparent url(images/logo.gif) no-repeat center center;
+			}
+		
+				#logo a span {
+					display: none;
+				}
+		
+    #top-ad {
+      position: absolute;
+      top: 10px;
+			width: 728px;
+			height: 90px;
+    }
+		
+		#search {
+			position: absolute;
+			right: 0px;
+			top: 123px;
+			margin: 0px;
+			padding: 0px;
+		}
+
+        #rss {
+            position: absolute;
+            right: 10px;
+            top: 138px;
+        }
+
+            #rss a {
+                background: url(images/icon-rss.gif);
+                display: block;
+                width: 48px;
+                height: 52px;
+            }
+
+                #rss a span {
+                    display: none;
+                    width: 129px;
+                    height: 52px;
+                }
+       #twitter {
+            position: absolute;
+            right: 75px;
+            top: 150px;
+        }
+
+		#menu {
+			height: 32px;
+			padding: 0px;
+			margin: 0px;
+			list-style-type: none;
+			position: absolute;
+			left: 0px;
+			top: 116px;
+		}
+	
+			#menu li {
+				float: left;
+				margin-right: 1px;
+			}
+	
+				#menu li a {
+					color: #ffffff;
+					font-size: 16px;
+/*					text-transform: uppercase;*/
+					font-weight: bold;
+					display: block;
+					line-height: 32px;
+					padding: 0px 25px;
+					background: #254670;
+					-moz-border-radius-topleft: 5px;
+					-webkit-border-top-left-radius: 5px;
+					-moz-border-radius-topright: 5px;
+					-webkit-border-top-right-radius: 5px;
+				}
+				
+				#menu li a:hover {
+					background: #254670;
+					text-decoration: none;
+				}
+				
+				#menu li.active a {
+					background: #2066a7;
+					text-decoration: none;
+				}
+		
+		#menu-level2 {
+			height: 32px;
+			padding: 0px;
+			margin: 0px;
+			list-style-type: none;
+			position: absolute;
+			left: 0px;
+			top: 118px;
+		}
+	
+			#menu-level2 li {
+				float: left;
+				margin-right: 1px;
+			}
+	
+				#menu-level2 li a {
+					color: #b1cbe3;
+					font-size: 12px;
+					font-weight: normal;
+					display: block;
+					line-height: 32px;
+					padding: 0px 15px;
+					background: transparent url(images/bullet-menu2.gif) no-repeat 5px 14px;
+				}
+				
+				#menu-level2 li a:hover {
+					color: #ffffff;
+					text-decoration: none;
+				}
+				
+				#menu-level2 li.active a {
+					color: #ffffff;
+				}
+
+  #breadscrumbs {
+    position:absolute;
+    color:#ffffff;
+    font-size:10px;
+    top:158px;
+    padding-left:20px;
+  }
+  
+  #breadscrumbs .navCrumb {
+    color:#ffffff !important;
+  }
+
+  #breadscrumbs .breadscrumbs-before-text {
+    color:#8FB2D3 !important;
+  }
+
+	#announcment {
+		background: #f4f9fd;
+		border: 1px solid #dfe6ed;
+		padding: 15px;
+		margin-top: 20px;
+		line-height: 18px;
+	}
+
+		#announcment h2 {
+			font-size: 12px;
+			font-weight: bold;
+			margin: 0px 0px 4px 0px;
+			padding: 0px 0px 4px 0px;
+			border-bottom: 1px dashed #bbbbbb;
+		}
+
+	#content-wrapper {
+		margin-top: 40px;
+	}
+
+
+		#content-wrapper .left {
+			width: 200px;
+			float: left;
+		}
+	
+	
+			#content-wrapper .left .block {
+				padding: 0px 0px 0px 0px;
+				margin: 0px 0px 30px 0px;
+			}
+		
+				#content-wrapper .left h2 {
+					line-height: 20px;
+					font-size: 12px;
+					font-weight: bold;
+					padding: 0px 0px 4px 0px;
+					margin: 0px 0px 10px 0px;
+					border-bottom: 1px solid #cbd1d8;
+				}
+
+
+				#download {
+					width: 200px;
+                    height: 70px;
+                    display: block;
+                    background: url(images/download.gif);
+				}
+
+                    #download span {
+                        display: none;
+                    }
+
+				#wp-calendar {
+					width: 100%;
+				}
+
+					#wp-calendar caption,
+					#wp-calendar th,
+					#wp-calendar td {
+						line-height: 20px;
+					}
+
+					#wp-calendar caption {
+						padding-bottom: 5px;
+						text-align: left;
+					}
+
+					#wp-calendar th {
+						font-weight: bold;
+						border: 1px solid #f0f3f7;
+						background: #f0f3f7;
+						text-align: right;
+						padding: 0px 4px;
+					}
+
+					#wp-calendar td {
+						border: 1px solid #f0f3f7;
+						text-align: right;
+						padding: 0px 4px;
+					}
+
+						#wp-calendar td a {
+							font-weight: bold;
+						}
+
+				.menu-level3 {
+					padding: 0px 0px 0px 0px;
+					margin: 0px 0px 0px 0px;
+					list-style-type: none;
+				}
+			
+					.menu-level3 li {
+						border-bottom: 1px solid #f0f3f7;
+					}
+			
+						.menu-level3 li a {
+							display: block;
+							padding: 5px 10px 5px 20px;
+							margin: 1px 0px 1px 0px;
+							text-decoration: none;
+							background: transparent url(images/bullet-menu3.gif) no-repeat 10px 10px;
+						}
+
+/*
+						.menu-level3 li a.rss {
+							background: transparent url(images/icon-rss.gif) no-repeat 174px center;
+						}
+*/
+
+						.menu-level3 li a:hover {
+							background-color: #F1F7FC;
+						}
+						
+						.menu-level3 li.active a {
+							background-color: #F1F7FC;
+						}
+
+				#download {
+					display: block;
+					width: 200px;
+					height: 70px;
+					background: transparent url(images/download.gif);
+				}
+
+					#download span {
+						display: none;
+					}
+
+		#content-wrapper .right {
+			float: right;
+			width: 728px;
+		}
+		
+      p.h-sep {
+        background: transparent url(images/dash.gif) repeat-x left center;
+      }
+
+            #content-wrapper .right #devAnalogClock,
+            #content-wrapper .right #devAnalogClock11,
+            #content-wrapper .right #devAnalogClock12,
+            #content-wrapper .right #devAnalogClock21,
+            #content-wrapper .right #devAnalogClock22,
+            #content-wrapper .right #devAnalogClock31,
+            #content-wrapper .right #devAnalogClock32,
+            #content-wrapper .right #devAnalogClock41,
+            #content-wrapper .right #devAnalogClock42,
+            #content-wrapper .right #devAnalogClock51,
+            #content-wrapper .right #devAnalogClock52,
+            #content-wrapper .right #devDigitalClock,
+            #content-wrapper .right #devDigitalClock11,
+            #content-wrapper .right #devDigitalClock12,
+            #content-wrapper .right #devDigitalClock21,
+            #content-wrapper .right #devDigitalClock22,
+            #content-wrapper .right #devDigitalClock31,
+            #content-wrapper .right #devDigitalClock32,
+            #content-wrapper .right #devDigitalClock41,
+            #content-wrapper .right #devDigitalClock42,
+            #content-wrapper .right #devDigitalClock51,
+            #content-wrapper .right #devDigitalClock52,
+			#content-wrapper .right #devDigitalClock14,
+            #content-wrapper .right #devDigitalClock142,
+			#content-wrapper .right #devDigitalClock15,
+            #content-wrapper .right #devDigitalClock152,
+			#content-wrapper .right #devDigitalClock16,
+            #content-wrapper .right #devDigitalClock162,
+			#content-wrapper .right #devDigitalClock17,
+            #content-wrapper .right #devDigitalClock172,
+			#content-wrapper .right #devDigitalClock18,
+            #content-wrapper .right #devDigitalClock182,
+            #content-wrapper .right #xorWebBadge {
+                border: 1px solid #ccc;
+                background: transparent url(/media/images/bg-transparent.gif);
+            }
+            #content-wrapper .right #xorWebBadge1 {
+                border: 1px solid #ccc;
+                background: transparent url(/media/images/xorWebBadge/computer.jpg);
+            }
+
+			#content-wrapper .right .title,
+			#content-wrapper .fullwidth .title{
+				line-height: 20px;
+				padding: 0px 0px 4px 0px;
+				border-bottom: 1px solid #cbd1d8;
+			}
+
+			#content-wrapper .right h1,
+			#content-wrapper .fullwidth h1 {
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+
+			#content-wrapper .right h2,
+			#content-wrapper .fullwidth h2 {
+				line-height: 20px;
+				font-size: 14px;
+				font-weight: bold;
+				padding: 0px 0px 4px 0px;
+				/*border-bottom: 1px solid #cbd1d8;*/
+			}
+
+			#content-wrapper .meta {
+				font-size: 10px;
+				position: relative;
+				padding: 4px 0px 0px 0px;
+			}
+
+			#content-wrapper .date {
+				font-size: 10px;
+			}
+
+			#content-wrapper .content {
+				padding: 10px 0px 30px 0px;
+			}
+
+				#content-wrapper .content a {
+					border-bottom: 1px dashed #AACFEC;
+					padding-bottom: 1px;
+				}
+        
+        #content-wrapper .content a.no-border {
+					border-bottom: 0 none;
+					padding-bottom: 0px;
+				}
+
+				#content-wrapper .content a:hover {
+					text-decoration: none;
+				}
+
+			#content-wrapper .right p,
+			#content-wrapper .right ul {
+				margin-bottom: 10px;
+				line-height: 18px;
+			}
+
+			#content-wrapper .right ul {
+				padding: 0px 0px 0px 30px;
+				list-style-type: square;
+			}
+
+
+
+			.comment {
+				padding-bottom: 10px;
+			}
+
+				.comment .left-c {
+					float: left;
+					width: 248px;
+				}
+
+					.balloon-top {
+						background: transparent url(images/balloon-top.gif) no-repeat left bottom;
+						font-size: 0;
+						height: 14px;
+					}
+
+					.admin .balloon-top {
+						background: transparent url(images/balloon-top-admin.gif) no-repeat left bottom;
+					}
+
+					.balloon {
+						background: transparent url(images/balloon-bg.gif) repeat-y;
+						padding: 0px 20px 0px 10px;
+					}
+
+					.admin .balloon {
+						background: transparent url(images/balloon-bg-admin.gif) repeat-y;
+					}
+
+						.comment div.avatar {
+							float: left;
+						}
+
+							.comment div.avatar img {
+								border: 1px solid #dbe9f6;
+								padding: 1px;
+							}
+
+							.admin div.avatar img {
+								border: 1px solid #EDC3B1;
+								padding: 1px;
+							}
+
+						.balloon ul {
+							list-style: none!important;
+							padding: 0px;
+							margin: 0px 0px 0px 25px!important;
+						}
+
+							.balloon ul li {
+								font-size: 10px;
+							}
+
+					.balloon-bottom {
+						background: transparent url(images/balloon-bottom.gif) no-repeat;
+						font-size: 0;
+						height: 14px;
+					}
+
+					.admin .balloon-bottom {
+						background: transparent url(images/balloon-bottom-admin.gif) no-repeat;
+					}
+
+				.comment .right-c {
+					float: right;
+					width: 470px;
+				}
+
+				.comment .commenttext p {
+					margin-bottom: 10px;
+                    font-size: 11px;
+				}
+
+	#footer {
+		margin-top: 20px;
+		/*border-bottom: 1px solid #dfe6ed;*/
+	}
+
+		#bottom-nav {
+			background: #8fb2d3 url(images/logo-footer.gif) no-repeat right bottom;
+			height: 205px;
+		}
+		
+			#bottom-nav .block {
+				float: left;
+				width: 200px;
+				padding-top: 18px;
+			}
+			
+			#bottom-nav .block .padd {
+				padding: 0 12px 0 27px;
+			}
+			
+			#bottom-nav .block .padd-last {
+				padding: 0 27px 0 27px;
+			}
+			
+				#bottom-nav .block h2 {
+					background: transparent url(images/black-dots.gif) repeat-x left bottom;
+					font-size: 15px;
+					font-weight: bold;
+					color: #0a2f5e;
+					padding-bottom: 14px;
+				}
+				
+				#bottom-nav ul {
+					list-style: none;
+					padding: 13px 0 0 0;
+					margin: 0;
+				}
+
+					#bottom-nav li {
+						
+					}
+					
+					#bottom-nav li.new {
+						background: transparent url(images/new.gif) no-repeat 102px 0;
+					}
+					
+					#bottom-nav li.new1 {
+						background: transparent url(images/new.gif) no-repeat 127px 0;
+					}
+					
+					#bottom-nav li.new2 {
+						background: transparent url(images/new.gif) no-repeat 108px 0;
+					}
+					
+					#bottom-nav li span {
+						
+					}
+					
+						#bottom-nav li a {
+							display: block;
+							font-size: 11px;
+							color: #fff;
+							text-decoration: none;
+							padding-bottom: 5px;
+							
+						}
+						
+							#bottom-nav li.first a {
+								
+							}
+							
+							#bottom-nav li.last a {
+								
+							}
+						
+						#bottom-nav li a:hover {
+							color: #fff;
+							text-decoration: underline;
+						}
+						
+						#bottom-nav li.selected a {
+							text-decoration: underline;
+						}
+						
+						#bottom-nav li.selected a:hover {
+							text-decoration: underline;
+						}
+		
+		p#copyright {
+			font-size: 10px;
+			color: #999;
+			text-align: center;
+			padding-top: 10px;
+		}
+		
+		#footer .left {
+			float: left;
+			width: 200px;
+			padding: 10px 0px;
+			border-top: 1px solid #dfe6ed;
+		}
+	
+		#footer .right {
+			margin-left: 240px;
+			padding: 10px 0px;
+			border-top: 1px solid #dfe6ed;
+		}
+	
+			#footer .right h2 {
+				font-size: 12px;
+				font-weight: bold;
+				padding: 0px 0px 0px 0px;
+				margin: 0px 0px 10px 0px;
+			}
+
+			#footer .right p {
+				line-height: 18px;
+			}
+
+.post-thumb-left {
+	float: left;
+	padding: 4px;
+	border: 1px solid #ddd;
+	margin: 0 15px 15px 0;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+/* ADD THIS STYLE CORRECTION */
+
+.addthis_toolbox a{
+  border:none !important;
+}
+/* Analog clock configurator */           
+.sourceCodeWraper{
+	float:left;	
+}
+.sourceCodeWraper {
+   padding-right:10px;
+}
+.xorClockWidget {
+	float:left;
+	font-size:10px;
+  width:250px;	
+}
+.xorClockWidget label {
+	display:block;
+	padding-top:8px;
+	padding-left:3px;
+	clear:both;
+}
+.xorClockWidget select, input[type="text"] {
+	width:218px;
+  border-color: #666666;
+  width: 218px;
+  border-width: 1px;
+  margin:5px;
+}
+#sourceCodeWraper {
+  overflow:hidden;
+}
+#sourceCodeWraper button {
+  width:150px;
+  height:30px; 
+  clear:both;
+  margin-top:10px;
+  display:block;
+}
+
+#advertismet {
+  width:300px;
+  padding-left:50px;
+  height:280px;
+  padding-left:150px;
+  overflow:hidden;
+}  
+
+.widget-content {
+  overflow:hidden;
+  width:728px;
+}
+
+#xorAnalogClock {
+  height:260px;
+  width:200px;
+  padding-left:30px;
+}

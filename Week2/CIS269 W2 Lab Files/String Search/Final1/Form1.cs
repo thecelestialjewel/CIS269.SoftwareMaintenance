@@ -1,13 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Final1
 {
+    /*
+     Christine Jordan
+    4.22.2021
+    CIS 269 Task 3 
+     */
     public partial class Form1 : Form
     {
         public Form1()
@@ -28,39 +28,47 @@ namespace Final1
     // searches for a string (needle) within another string (haystack)
     // returns the first index position of the needle in the haystack,
     // or -1 if the needle is not found.
-    private int findSubString(string haystack, string needle)
+    private int findSubString(string haystack, string needle) //method takes in haystack and a string-CMJ
     {
         // if needle longer than haystack, can't be found
         if (needle.Length > haystack.Length) return -1;
+            haystack = haystack.ToLower(); //ERROR FIX: Case sensitive checking 
+            needle = needle.ToLower(); //ERROR FIX: Case sensitive checking
      
         // for each step we check if the needle matches
         // the current position
         bool match = false;
 
         // loop variables
-        int i, j;
-
-        // consider all start positions in the haystack
-        for (i = 1; i < haystack.Length - needle.Length; i++)
+        //deleted int i,j; placed into for loop declaration
         
-            // for each start position, assume the needle matches
-            match = true;
 
-            // consider each position in the needle, relative to
-            // the current position in the haystack
-            for (j = i; j < needle.Length; j++)
+
+            // consider all start positions in the haystack
+            for (int i = 0; i < haystack.Length; i++) //error (1) set to zero, error (2) remove the -needle.length
             {
-                // if they don't match, then cancel the match
-                if (haystack[j] != needle[j]) match = false;
-            }
+                // for each start position, assume the needle matches
+                match = true;
 
-            // if all position in the needle match the haystack
-            // return the current position
-            if (match) return j;
-                    
+                // consider each position in the needle, relative to
+                // the current position in the haystack
+                for (int j = 0; j < needle.Length; j++) //error (4) change j=0, not j=i
+                {
+                    // if they don't match, then cancel the match
+                    if (haystack[i + j] != needle[j])
+                    {
+                        match = false; //error (3) haystack[j] to [i]
+                        break;
+                    }
+                }
+                // if all position in the needle match the haystack
+                // return the current position
+                if (match) return i; //ERROR FIX: changed to return i instead of j, was returning 3
+
+            } //error (5) curly braces for scope to align logic         
         
-        return 0;
-    }
+        return -1; //ERROR fix: didn't find anything (-1)
+        }
 
 
     // ***** END LOOKING FOR BUGS HERE
